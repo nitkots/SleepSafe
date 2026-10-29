@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 200" width="960" height="200" role="img" aria-label="Data flow: headset to Raspberry Pi to Databricks volume to processing job to Delta tables and report to dashboard">
+  <style>
+    .box{fill:#111827;stroke:#334155;stroke-width:1.5}
+    .t{fill:#f1f5f9;font:600 15px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-anchor:middle}
+    .s{fill:#94a3b8;font:12px -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;text-anchor:middle}
+    .wire{stroke:#475569;stroke-width:2;fill:none;stroke-dasharray:4 5}
+  </style>
+  <rect width="960" height="200" rx="16" fill="#0b1020"/>
+
+  <!-- stages -->
+  <g>
+    <rect class="box" x="20"  y="60" width="130" height="78" rx="12"/><text class="t" x="85"  y="94">Headset</text><text class="s" x="85"  y="116">Bluetooth mic</text>
+    <rect class="box" x="180" y="60" width="130" height="78" rx="12"/><text class="t" x="245" y="94">Raspberry Pi</text><text class="s" x="245" y="116">filter · chunk · spool</text>
+    <rect class="box" x="340" y="60" width="130" height="78" rx="12"/><text class="t" x="405" y="94">UC Volume</text><text class="s" x="405" y="116">10 s FLAC chunks</text>
+    <rect class="box" x="500" y="60" width="130" height="78" rx="12"/><text class="t" x="565" y="94">Databricks Job</text><text class="s" x="565" y="116">CNN14 → BiGRU</text>
+    <rect class="box" x="660" y="60" width="130" height="78" rx="12"/><text class="t" x="725" y="94">Delta + LLM</text><text class="s" x="725" y="116">events · report</text>
+    <rect class="box" x="820" y="60" width="120" height="78" rx="12"/><text class="t" x="880" y="94">Dashboard</text><text class="s" x="880" y="116">Next.js · Vercel</text>
+  </g>
+
+  <!-- wires -->
+  <path id="w" class="wire" d="M150 99 H180 M310 99 H340 M470 99 H500 M630 99 H660 M790 99 H820"/>
+  <path id="route" d="M150 99 H820" fill="none" stroke="none"/>
+
+  <!-- audio packets flow left to right -->
+  <g fill="#7dd3fc">
+    <circle r="5"><animateMotion dur="5s" repeatCount="indefinite" path="M150 99 H820"/></circle>
+    <circle r="5"><animateMotion dur="5s" begin="1.25s" repeatCount="indefinite" path="M150 99 H820"/></circle>
+    <circle r="5"><animateMotion dur="5s" begin="2.5s" repeatCount="indefinite" path="M150 99 H820"/></circle>
+    <circle r="5" fill="#a78bfa"><animateMotion dur="5s" begin="3.75s" repeatCount="indefinite" path="M150 99 H820"/></circle>
+  </g>
+
+  <!-- control channel back from dashboard to the Pi (outbound-only HTTPS polling) -->
+  <path d="M880 138 V170 H245 V138" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2 6" opacity=".7"/>
+  <circle r="4" fill="#f59e0b"><animateMotion dur="4s" repeatCount="indefinite" path="M880 138 V170 H245 V138"/></circle>
+  <text class="s" x="560" y="188" fill="#fbbf24">Start / Stop commands · Pi polls over outbound HTTPS (no inbound ports)</text>
+  <text class="s" x="480" y="36">Press Start → audio streams up while you sleep → press Stop → report in minutes</text>
+</svg>
