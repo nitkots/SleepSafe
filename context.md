@@ -21,13 +21,7 @@ Databricks App (`sleepsafe-agent`) exposes the same data plus classification and
 
 ---
 
-## 1. People, accounts, ownership
-
-| Who | Role | Accounts used |
-|---|---|---|
-| Harihara Nalamotu (`harihara.nalamotu@gmail.com`, GitHub `HariharaNalamotu`) | Model, pipeline, Databricks job, dashboard, Pi agent (this repo, branch `hari`) | GitHub repo owner; Vercel account `hariharanalamotu` (team scope `hariharanalamotus-projects`) |
-| yahuja2 (`yahuja2@wisc.edu`) | Built the `sleepsafe-agent` Databricks App (classification + Q&A); owns the Databricks workspace | Databricks Free Edition workspace owner |
-| Nitesh | Built the Pi audio capture (`audio_stream.py`, branch `nitesh`) and the Pi runbook | Code lives on the Pi at `~/SleepSafe` and in `~/sleepsafe-nitesh.bundle` |
+## 1. Accounts and ownership
 
 - GitHub repo: `https://github.com/HariharaNalamotu/SleepSafe` (private). Branches: `main` (Vercel production
   branch), `hari` (all of this work), `nitesh` (Pi capture; present on the Pi as a checkout + bundle).

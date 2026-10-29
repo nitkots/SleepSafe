@@ -31,7 +31,6 @@
 - [Challenges and lessons](#challenges-and-lessons)
 - [Limitations](#limitations)
 - [What's next](#whats-next)
-- [Team](#team)
 
 ---
 
@@ -265,17 +264,5 @@ SELECT report_markdown FROM workspace.default.sleepsafe_reports WHERE session_id
 **Longer term: a clinician-directed home assessment.** The ambition is a device a doctor could prescribe for one night at home, with findings the clinician reviews to decide on further testing or care. That would require clinical partnerships, validation studies and the appropriate FDA pathway, and insurance coverage would need its own evidence. **None of these exist today**; they are future milestones, not current capabilities.
 
 </details>
-
-## Team
-
-Built at a hackathon by:
-
-| | Built |
-|---|---|
-| **[Harihara Nalamotu](https://github.com/HariharaNalamotu)** | Audio model, Databricks pipeline and job, dashboard, Pi agent |
-| **Yagya** | `sleepsafe-agent` Databricks App: classification and Q&A |
-| **[Nitesh Kothari](https://github.com/nitkots)** | Raspberry Pi audio capture and runbook |
-
-Thanks to **Tyler and Patrick (Xorbix)** for pushing us to build in data protection, and **Carter (Strato VC)** for the wellness-first product advice.
 
 <sub>This repository is a copy of [HariharaNalamotu/SleepSafe](https://github.com/HariharaNalamotu/SleepSafe). Training data: PSG-Audio, CC BY 4.0. PANNs CNN14 weights: Kong et al.</sub>
